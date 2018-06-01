@@ -12,9 +12,9 @@ The portal design is a (1) public **single page HTML** file that can be public a
 
    **RESTful JSON API**  The RESTful JSON API contains all the gene and transcript level contact and essentially done as a single find on "gene" or "transcript".  For the initial version, no security layers have been added, but different versions with various security implementations are available, such as via OAUTH2, AUTH0, and JWT JSON tokens.  Please contact these implementations.  
 
-      * A running version of the PPMI RNA-Seq App is available at http://www.ppmi.io/rna.html
+   * A running version of the PPMI RNA-Seq App is available at http://www.ppmi.io/rna.html
 
-      * A running version of the API is at http://www.ppmi.io/api and an example query of gene LRRK2 is http://www.ppmi.io/api/gene/LRRK2
+   * A running version of the API is at http://www.ppmi.io/api and an example query of gene LRRK2 is http://www.ppmi.io/api/gene/LRRK2
 
 
 ### Prerequisites
@@ -66,7 +66,7 @@ yarn install
 
 5.  Start server
 
-```
+``` bash
 yarn start
 ```
 
@@ -80,7 +80,19 @@ Notes:
 
 ### Last, point HTML to Your API
 
-7.  In the "raw.html" HTML file to be deployed, change the `var global_api='/api/gene';` to the location of your URL.  Following the example exactly, you would need to point to "http://localhost:3000/api/gene". `var global_api='http://localhost:3000/api/gene';`. The deployed HTML file can have any name.
+7.  In the "raw.html" HTML file to be deployed, change:
+
+``` javascript
+var global_api='/api/gene';
+```
+
+to read: 
+
+``` javascript
+var global_api='http://localhost:3000/api/gene';
+``` 
+
+or the appropriate location. The deployed HTML file can have any name.
 
 8.  Unit test by going to your URL of the public page, e.g. http://ppmi.io/rna.html and unit test by typing "LRRK2" in gene window.  If no gene comes up, you are not seeing the API.  If the LRRK2 gene comes up, you are successful in the unit test.
 
