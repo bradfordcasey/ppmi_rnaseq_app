@@ -1,0 +1,21 @@
+{
+  "name": "ppmi_rnaseq_app",
+  "version": "Phase 1 RC2 Study Version 0.5.0532918a",
+  "description": "API used PPMI RNA-seq Portal",
+  "main": "api.js",
+  "scripts": {
+    "download": "mkdir -p mongodb logs db && curl -o mongodb/gene_info.bson http://www.ppmi.io/gene_info.bson && curl -o mongodb/gene_info.metadata.json http://www.ppmi.io/gene_info.metadata.json",
+    "mongorestore": "mongorestore -d ppmi -c gene_info mongodb/gene_info.bson",
+    "mongodb": "mkdir -p logs db && mongod --port 27017 --dbpath db --logpath logs/mongodb.log --fork",
+    "test": "nodemon ./api.js",
+    "start": "node ./api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/davcraig75/ppmi_rnaseq_app"
+  },
+  "author": "David Craig",
+  "license": "Contact",
+  "dependencies": {
+  }
+}
