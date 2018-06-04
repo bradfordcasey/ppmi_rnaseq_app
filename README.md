@@ -1,6 +1,6 @@
 # PPMI RNA-Seq App
 
-**Phase 1 RC2 Study Version 0.5.0532918a**
+**Phase 1 RC2 Study Version 0.5.0533118**
 
 ## About
 
@@ -90,7 +90,7 @@ to read:
 
 ``` javascript
 var global_api='http://localhost:3000/api/gene';
-``` 
+```
 
 or the appropriate location. The deployed HTML file can have any name.
 
